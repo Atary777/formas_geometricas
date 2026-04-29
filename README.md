@@ -1,5 +1,5 @@
 # formas_geometricas
-Teste de cálculos de formas geométricas
+Teste de cálculos de formas geométricas, avaliação prática.
 
 ### Atividades:
  - Adicionar box para inserir *Largura*
