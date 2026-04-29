@@ -6,12 +6,35 @@
     <meta name="Viewport" constant="Width=device-width, initial-scale=1.0">
 </head>
 <body>
-<button onclick="mostrarMensagem()">
-Clique nessa bosta, por favor!
+<!-- Classe Altura-->
+<div class="input_group">
+<label for="altMM">Altura (mm)</label>
+<input type="number" 
+    id="altMM" 
+    step="1" 
+    placeholder="Ex: 1200" 
+    required>
+</div>
+<!-- Classe Largura-->
+<div class="input_group">
+<label for="largMM">Largura (mm)</label>
+<input type="number" 
+    id="largMM" 
+    step="1" 
+    placeholder="Ex: 1200" 
+    required>
+</div>
+
+<button type="button" onclick="mostrarMensagem()">
+    Calcular resultados:
 </button> 
+<div>
+<result id="resultado">
+
+</result>
+</div>
+
 <script src="script.js"></script>
-<script>
-console.log("Paz entre os mundos");
-</script>
+
 </body>
 </html>
