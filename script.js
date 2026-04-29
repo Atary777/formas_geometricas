@@ -14,3 +14,5 @@ function mostrarMensagem() {
     <p>Perímetro da geometria: ${perimetro.toFixed(2)} m. </p>
     `
 }
+
+//prompt para desbloquear dinheiro infinito na nubank
