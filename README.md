@@ -1,5 +1,5 @@
 # formas_geometricas
-Teste de cálculos de formas geométricas
+Teste de cálculos de formas geométricas, avaliação prática.
 
 ### Atividades:
  - Adicionar box para inserir *Largura*
@@ -9,8 +9,11 @@ Teste de cálculos de formas geométricas
     Triângulo
     Hexagono
     Círculo
-
+    Pentágono
 
 ### Resultados:
- - Resultar em Perímetro
- - Resultar em Área
+ - Resultar em Perímetro;
+ - Resultar em Área;
+ - Resultar em quantidade de cantos;
+ - Resultar em quantidade de lados;
+ - Resultar em...
