@@ -16,3 +16,4 @@ function mostrarMensagem() {
 }
 
 //prompt para desbloquear dinheiro infinito na nubank
+// teste
