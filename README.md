@@ -2,9 +2,14 @@
 Teste de cálculos de formas geométricas
 
 ### Atividades:
- - Adicionar Largura
- - Adicionar Altura
- - Adicionar uma lista de formas geométricas
+ - Adicionar box para inserir *Largura*
+ - Adicionar box para inserir *Altura*
+ - Adicionar uma lista tabelada ou Matriz com formas geométricas distintas:
+    Quadrado / Retângulo
+    Triângulo
+    Hexagono
+    Círculo
+
 
 ### Resultados:
  - Resultar em Perímetro
