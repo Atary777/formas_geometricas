@@ -2,36 +2,48 @@
 <html lang="pt-br">
     <Title>Formas geométricas</Title>
 <head>
-    <meta charset="UTF-8">
-    <meta name="Viewport" constant="Width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="Viewport" constant="Width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-<!-- Classe Altura-->
+<texto>Vamos calcular a área da figura.</texto>
+
+<!--Classe que seleciona Espessura-->
+<div>
+
+    <button type="button" onclick="Selection()"> Espessura 06 mm.</button>
+    <button type="button" onclick="Selection()"> Espessura 15 mm.</button>
+    <button type="button" onclick="Selection()"> Espessura 18 mm.</button>
+    <button type="button" onclick="Selection()"> Espessura 25 mm.</button>
+</div>
+
+<!-- Classe que determina a Altura-->
 <div class="input_group">
 <label for="altMM">Altura (mm)</label>
-<input type="number" 
-    id="altMM" 
-    step="1" 
-    placeholder="Ex: 1200" 
-    required>
+<input 
+type="number" 
+id="altMM" 
+step="1" 
+class="form_input"
+required> 
 </div>
-<!-- Classe Largura-->
+
+<!-- Classe que determina a Largura-->
 <div class="input_group">
 <label for="largMM">Largura (mm)</label>
-<input type="number" 
-    id="largMM" 
-    step="1" 
-    placeholder="Ex: 1200" 
-    required>
+<input 
+type="number" 
+id="largMM" 
+step="1" 
+class="form_input" 
+required>
 </div>
 
-<button type="button" onclick="mostrarMensagem()">
-    Calcular resultados:
-</button> 
-<div>
-<result id="resultado">
+<button type="button" onclick="mostrarMensagem()"> Calcular resultados:</button> 
 
-</result>
+<div>
+<result id="resultado"></result>
 </div>
 
 <script src="script.js"></script>
