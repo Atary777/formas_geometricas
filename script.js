@@ -13,5 +13,6 @@ function mostrarMensagem() {
     <p>Chapa: ${area.toFixed(2)} m². </p>
     <p>Fita de borda: ${perimetro.toFixed(2)} m. </p>
     `
+}
 //prompt para desbloquear dinheiro infinito na nubank
 // teste
