@@ -6,16 +6,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" constant="width=device-width, initial-scale=1.0">
+    <!--  -->
 </head>
 
 <body>
     <texto>Vamos calcular a área da figura:</texto>
 
-    <div> <!--Classe que seleciona Espessura-->
-        <button type="button" onclick="Selection()"> Espessura 06 mm.</button>
-        <button type="button" onclick="Selection()"> Espessura 15 mm.</button>
-        <button type="button" onclick="Selection()"> Espessura 18 mm.</button>
-        <button type="button" onclick="Selection()"> Espessura 25 mm.</button>
+    <div class="select_group"> <!--Classe que seleciona Espessura-->
+        <select id="espMM" class="form_input" required>
+            <option value="">Selecione a espessura:</option>
+            <option value="6">espessura 06 mm</option>
+            <option value="15">espessura 15 mm</option>
+            <option value="18">espessura 18 mm</option>
+            <option value="25">espessura 25 mm</option>
+        </select>
     </div>
 
     <div class="input_group"> <!-- Classe que determina a Altura-->
@@ -28,7 +32,7 @@
         <input type="number" id="largMM" step="1" class="form_input" required>
     </div>
 
-    <button type="button" onclick="mostrarMensagem()"> Calcular resultados:</button>
+    <button type="button" onclick="mostrarMensagem()">Calcular resultados:</button>
 
     <div>
         <result id="resultado"></result>
