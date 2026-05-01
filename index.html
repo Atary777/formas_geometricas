@@ -1,52 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <Title>Formas geométricas</Title>
+<!--Título que aparece na aba do navegador, (Title) deve ser em letra minúscula-->
+<title>Formas geométricas</title>
+
 <head>
-<meta charset="UTF-8">
-<meta name="Viewport" constant="Width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" constant="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-<texto>Vamos calcular a área da figura.</texto>
+    <texto>Vamos calcular a área da figura:</texto>
 
-<!--Classe que seleciona Espessura-->
-<div>
+    <div> <!--Classe que seleciona Espessura-->
+        <button type="button" onclick="Selection()"> Espessura 06 mm.</button>
+        <button type="button" onclick="Selection()"> Espessura 15 mm.</button>
+        <button type="button" onclick="Selection()"> Espessura 18 mm.</button>
+        <button type="button" onclick="Selection()"> Espessura 25 mm.</button>
+    </div>
 
-    <button type="button" onclick="Selection()"> Espessura 06 mm.</button>
-    <button type="button" onclick="Selection()"> Espessura 15 mm.</button>
-    <button type="button" onclick="Selection()"> Espessura 18 mm.</button>
-    <button type="button" onclick="Selection()"> Espessura 25 mm.</button>
-</div>
+    <div class="input_group"> <!-- Classe que determina a Altura-->
+        <label for="altMM">Altura (mm)</label>
+        <input type="number" id="altMM" step="1" class="form_input" required>
+    </div>
 
-<!-- Classe que determina a Altura-->
-<div class="input_group">
-<label for="altMM">Altura (mm)</label>
-<input 
-type="number" 
-id="altMM" 
-step="1" 
-class="form_input"
-required> 
-</div>
+    <div class="input_group"> <!-- Classe que determina a Largura-->
+        <label for="largMM">Largura (mm)</label>
+        <input type="number" id="largMM" step="1" class="form_input" required>
+    </div>
 
-<!-- Classe que determina a Largura-->
-<div class="input_group">
-<label for="largMM">Largura (mm)</label>
-<input 
-type="number" 
-id="largMM" 
-step="1" 
-class="form_input" 
-required>
-</div>
+    <button type="button" onclick="mostrarMensagem()"> Calcular resultados:</button>
 
-<button type="button" onclick="mostrarMensagem()"> Calcular resultados:</button> 
+    <div>
+        <result id="resultado"></result>
+    </div>
 
-<div>
-<result id="resultado"></result>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
