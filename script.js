@@ -1,24 +1,16 @@
-/*  - Escopo de Programação:
-
-    Autor: João Paulo
-    Auxiliador: Felipe Andriotti
-
-    - Definir Variáveis: Largura, Altura, Espessura, etc...
-    - Definir Constantes: (Funções pré Cálculo) Área, Perímetro, Volume, Peso, etc...
-    - Definir Funções: Ao clicar no botão; Ao trocar a espessura; etc...
-    - Definir Eventos: Se eu inserir um valor errado, me avisar...
-    - Definir Saídas: Resultados no sistema SI (Sistema Internacional de Unidades) e em mm, cm, etc...*/
-
 function atualizarLabel() {
     const select = document.getElementById("forms");
     const labelA = document.getElementById("labelAltura");
+    const labelL = document.getElementById("labelLargura");
 
     const forma = select.value;
 
     if (forma) {
-        labelA.textContent = `Altura do ${forma}:`;
+        labelA.textContent = `Altura do ${forma}: `;
+        labelL.textContent = `Largura do ${forma}: `;
     } else {
-        labelA .textContent = 'Altura:';
+        labelA.textContent = 'Altura: ';
+        labelL.textContent = 'Largura: ';
     }
 }
 
@@ -34,7 +26,7 @@ function mostrarMensagem() {
     const perimetro = (largura + altura) * 2;
     const resultado = document.getElementById('resultado');
     resultado.innerHTML = `
-    <p>Área da Geometria: ${area.toFixed(2)} m². </p>
-    <p>Perímetro da Geometria: ${perimetro.toFixed(2)} m. </p>
+    <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
+    <p>Perímetro do ${forma}: ${perimetro.toFixed(2)} m. </p>
     `
 }

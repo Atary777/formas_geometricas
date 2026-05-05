@@ -12,9 +12,6 @@
   <texto>Vamos calcular a área da figura:</texto>
 
   <div class="select_group">
-    <!--Classe que seleciona a forma-->
-    <!--Quando vc precisa de inserir valores, não associe números, senão você terá que fazer um map no (Js)-->
-    <!--Percebe-se que o Value não pode ter caracteres especiais, já em sua descrição é sussa-->
     <select id="forms" class="form_input" required onchange="atualizarLabel()">
       <option value="">Selecione a forma:</option>
       <option value="Triangulo">Triângulo</option>
@@ -26,15 +23,12 @@
   </div>
 
   <div class="input_group">
-    <!-- Classe que determina a Altura-->
-    <!-- Nesse caso iremos colocar um id para o label, pois no (Js), iremos fazer ele alterar a nomenclatura-->
     <label for="altura" id="labelAltura">Altura: </label>
     <input type="number" id="altura" step="1" class="form_input" required />
   </div>
 
   <div class="input_group">
-    <!-- Classe que determina a Largura-->
-    <label for="largura">Largura: </label>
+    <label for="largura" id="labelLargura">Largura: </label>
     <input type="number" id="largura" step="1" class="form_input" required />
   </div>
 
