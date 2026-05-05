@@ -11,6 +11,12 @@ Teste de cálculos de formas geométricas, avaliação prática.
     Círculo
     Pentágono
 
+### Eventos:
+    - Ao alterar a forma da geometria, as descrições devem mudar.
+    - Incluir as fórmulas dos objetos no (Js), em forma de const.
+
+#### Vou adicionar uma pasta de imagens, posteriormente iremos linkar elas.
+
 ### Resultados:
  - Resultar em Perímetro;
  - Resultar em Área;
