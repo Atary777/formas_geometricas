@@ -34,7 +34,7 @@ function mostrarMensagem() {
     const perimetro = (largura + altura) * 2;
     const resultado = document.getElementById('resultado');
     resultado.innerHTML = `
-    <p>Área da ${forma}: ${area.toFixed(2)} m². </p>
+    <p>Área da Geometria: ${area.toFixed(2)} m². </p>
     <p>Perímetro da Geometria: ${perimetro.toFixed(2)} m. </p>
     `
 }
