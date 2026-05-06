@@ -23,3 +23,7 @@ Teste de cálculos de formas geométricas, avaliação prática.
  - Resultar em quantidade de cantos;
  - Resultar em quantidade de lados;
  - Resultar em...
+
+ # LINK
+
+ https://atary777.github.io/formas_geometricas/
