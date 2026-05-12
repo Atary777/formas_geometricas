@@ -13,8 +13,11 @@ function atualizarLabel() {
         labelL.textContent = 'Largura: ';
     }
 }
-
 function mostrarResultados() {
+    const select = document.getElementById("forms");
+    const forma = select.value;
+}
+function areaRetangulo() {
 
     const select = document.getElementById("forms");
     const forma = select.value;
@@ -43,3 +46,7 @@ function areaCirculo(){
     <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
     `
 }
+/*function areaTriangulo(){
+    const select = document.getElementById("forms");
+    const form
+}*/
