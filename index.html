@@ -22,9 +22,15 @@
     </select>
   </div>
 
-  <div class="input_group">
-    <label for="altura" id="labelAltura">Altura: </label>
-    <input type="number" id="altura" step="1" class="form_input" required />
+  <div class="select_tri_group">
+    <select id="triangulos" class="triangulo_input" required onchange="atualizarLabel()">
+      <option value="">Selecione a forma:</option>
+      <option value="Triangulo">Triângulo</option>
+      <option value="Quadrado">Quadrado</option>
+      <option value="Circulo">Círculo</option>
+      <option value="Trapezio">Trapézio</option>
+      <option value="Retangulo">Retângulo</option>
+    </select>
   </div>
 
   <div class="input_group">
@@ -33,8 +39,19 @@
   </div>
 
   <div class="input_group">
-    <label for="ang1" id="labelang1">Angulo1: </label>
-    <input type="number" id="ang1" step="1" class="form_input" required />
+    <label for="altura" id="labelAltura">Altura: </label>
+    <input type="number" id="altura" step="1" class="form_input" required />
+  </div>
+
+  <div class="input_group">
+    <label for="angulo_1" id="labelang1">Angulo1: </label>
+    <input type="number" id="angulo_1" step="1" class="form_input" required />
+
+    <label for="angulo_1" id="labelang1">Angulo1: </label>
+    <input type="number" id="angulo_1" step="1" class="form_input" required />
+
+    <label for="angulo_1" id="labelang1">Angulo1: </label>
+    <input type="number" id="angulo_1" step="1" class="form_input" required />
   </div>
 
   <button type="button" onclick="mostrarResultados()">Calcular resultados: </button>

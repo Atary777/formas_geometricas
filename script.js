@@ -8,31 +8,28 @@ const formulasMAP = {
 const constMAP = {
     select: document.getElementById("forms"),
     largura: document.getElementById("largura"),
-    altura: document.getElementById('altura'),
+    altura: document.getElementById("altura"),
     labelLargura: document.getElementById("labelLargura"),
     labelAltura: document.getElementById("labelAltura"),
-    resultado: document.getElementById("resultado")
+    resultado: document.getElementById("resultado"),
 };
 
 function atualizarLabel() {
     // const select = document.getElementById("forms");
+    // const labelA = document.getElementById("labelAltura");
     const forma = constMAP.select.value;
-    const labelA = document.getElementById("labelAltura");
-    const labelL = document.getElementById("labelLargura");
+    const labelA = constMAP.labelAltura.value;
+    const labelL = constMAP.labelLargura.value;
 
     if (forma) {
         labelA.textContent = `Altura do ${forma}: `;
         labelL.textContent = `Largura do ${forma}: `;
-
     } else {
         labelA.textContent = 'Altura: ';
         labelL.textContent = 'Largura: ';
     }
 }
-function mostrarResultados() {
-    const select = document.getElementById("forms");
-    const forma = select.value;
-}
+
 function areaRetangulo() {
 
     const forma = constMAP.select.value;
@@ -65,6 +62,19 @@ function areaCirculo(){
     <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
     `
 }
-function areaTriangulo(){
+
+function mostrarResultados() {
     const select = document.getElementById("forms");
+    const forma = select.value;
+
+    let area = largura * altura;
+    let perimetro = (largura + altura) * 2;
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = `
+    <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
+    <p>Perímetro do ${forma}: ${perimetro.toFixed(2)} m. </p>
+    `
 }
+/*function areaTriangulo(){
+    const select = document.getElementById("forms");
+}*/
