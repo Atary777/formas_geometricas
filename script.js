@@ -2,14 +2,20 @@ const f_MAP = {
     // Características do Retângulo
     areaRetangulo: (l, a) => l * a,
     perimetroRetangulo: (l, a) => 2 * (l + a),
-    hipotenusaRetangulo: (a, b) => Math.sqrt(a**2 + b**2),
-    areaCirculo: (raioX, raioY) => (raioX * raioY) * Math.PI,
-    areaTriangulo: (a, b, c) => a + b + c,
-    areaTrapezio: (base1, base2, alt) => 1/2 (base1 + base2) * alt,
-    areaQuadrado: (a, b) => a * b,
+    hipotenusaRetangulo: (a, b) => Math.sqrt(a ** 2 + b ** 2),
     cantosRetangulo: 4,
     ladosRetangulo: 4,
     somaAngulosRetangulo: 360,
+
+    areaCirculo: (raioX, raioY) => (raioX * raioY) * Math.PI,
+    perimetroCirculo: (raioX, raioY) => 2 * Math.PI * Math.sqrt((raioX ** 2 + raioY ** 2) / 2),
+    cantosCirculo: 0,
+
+    areaTriangulo: (a, b, c) => a + b + c,
+
+    areaTrapezio: (base1, base2, alt) => 1 / 2(base1 + base2) * alt,
+
+    areaQuadrado: (a, b) => a * b,
     // Teste de constantes, fórmulas geométricas
 }
 
@@ -54,31 +60,32 @@ function areaRetangulo() {
 
     let area = largura * altura;
     let perimetro = (largura + altura) * 2;
-    
+
 }
 
-function areaCirculo(){
+function areaCirculo() {
     //const raioX = parseFloat(document.getElementById("raioX").value)
     //const raioY = parseFloat(document.getElementById("raioY").value)
-                                                    //EU SEI QUE TA ERRADO//
+    //EU SEI QUE TA ERRADO//
 }
 
-function areaTriangulo(){
+function areaTriangulo() {
     //const tipo = constMAP.tipoTriangulo;
     //const select = constMAP.select;
-                                                    //EU SEI QUE TA ERRADO//
+    //EU SEI QUE TA ERRADO//
 }
 
-function areaTrapezio(){
+function areaTrapezio() {
     //const tipo = constMAP.tipoTriangulo;
     //const select = constMAP.select;
-                                                    //EU SEI QUE TA ERRADO//
+    //EU SEI QUE TA ERRADO//
 }
 
-function areaQuadrado(){
+function areaQuadrado() {
+
     //const tipo = constMAP.tipoTriangulo;
     //const select = constMAP.select;
-                                                    //EU SEI QUE TA ERRADO//
+    //EU SEI QUE TA ERRADO//
 }
 
 function mostrarResultados() {
@@ -87,7 +94,7 @@ function mostrarResultados() {
 
     let area = constMAP.largura.value / 1000 * constMAP.altura.value / 1000;
     let perimetro = (constMAP.largura.value / 1000 + constMAP.altura.value / 1000) * 2;
-d
+    d
     const resultado = constMAP.resultado;
     resultado.innerHTML = `
     <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
