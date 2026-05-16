@@ -47,34 +47,30 @@ const constMAP = {
 };
 
 function atualizarLabel() {
-    // const select = document.getElementById("forms");
-    // const labelA = document.getElementById("labelAltura");
     const forma = constMAP.select.value;
     const labelL = constMAP.labelLargura;
     const labelA = constMAP.labelAltura;
+    //const labelX = constMAP.labelRX;
+    //const labelY = constMAP.labelRY;
+    //const supTrapezio = constMAP.labelsup;
+    //const infTrapezio = constMAP.labelinf;
+    //const altTrapezio = constMAP.labelalt;
+    //const anguloA = constMAP.angulo1;
+    //const anguloB = constMAP.angulo2;
+    //const anguloC = constMAP.angulo3;
 
     if (forma) {
         labelL.textContent = `Largura do ${forma}: `;
         labelA.textContent = `Altura do ${forma}: `;
+
     } else {
         labelL.textContent = 'Largura: ';
         labelA.textContent = 'Altura: ';
     }
 }
 
-function areaRetangulo() {
-    const select = document.getElementById("forms");
-    const forma = select.value;
-
-    const forma = constMAP.select.value;
-
-    let largura = parseFloat(document.getElementById('largura').value) / 1000;
-    let altura = parseFloat(document.getElementById('altura').value) / 1000;
-
-    let area = largura * altura;
-    let perimetro = (largura + altura) * 2;
-
-}
+//function areaRetangulo() {
+//}
 
 //function areaCirculo() {
 //}
@@ -93,10 +89,21 @@ function mostrarResultados() {
     const select = constMAP.select.value
     const forma = select.value;
   
-    let area = constMAP.largura.value / 1000 * constMAP.altura.value / 1000;
-    let perimetro = (constMAP.largura.value / 1000 + constMAP.altura.value / 1000) * 2;
-    d
+    //let area = constMAP.largura.value / 1000 * constMAP.altura.value / 1000;
+    //let perimetro = (constMAP.largura.value / 1000 + constMAP.altura.value / 1000) * 2;
 
+    switch (forma){
+        case "Triangulo":
+            return f_MAP.areaTriangulo.value;
+        case "Quadrado":
+            return f_MAP.areaQuadrado.value;
+        case "Circulo":
+            return f_MAP.areaCirculo.value;
+        case "Trapezio":
+            return f_MAP.areaTrapezio.value;
+        case "Retangulo":
+            return f_MAP.areaRetangulo.value;
+    }
     const resultado = constMAP.resultado;
     resultado.innerHTML = `
     <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
