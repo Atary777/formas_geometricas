@@ -1,22 +1,26 @@
 const f_MAP = {
     // Características do Retângulo
-    areaRetangulo: (l, a) => l * a,
+    areaRetangulo: (l, a) => l / 1000 * a / 1000,
     perimetroRetangulo: (l, a) => 2 * (l + a),
     hipotenusaRetangulo: (a, b) => Math.sqrt(a ** 2 + b ** 2),
     cantosRetangulo: 4,
     ladosRetangulo: 4,
     somaAngulosRetangulo: 360,
 
-    areaCirculo: (raioX, raioY) => (raioX * raioY) * Math.PI,
-    perimetroCirculo: (raioX, raioY) => 2 * Math.PI * Math.sqrt((raioX ** 2 + raioY ** 2) / 2),
+    areaCirculo: (raioX) => (raioX ** 2) * Math.PI,
+    perimetroCirculo: (raioX) => 2 * Math.PI * raioX,
     cantosCirculo: 0,
+
+    areaElipse: (raioX, raioY) => (raioX * raioY) * Math.PI,
+    perimetroElipse: (raioX, raioY) => 2 * Math.PI * (raioX * raioY),
+    cantosElipse: 0,
 
     areaTriangulo: (a, b, c) => a + b + c,
 
     areaTrapezio: (base1, base2, alt) => 1 / 2(base1 + base2) * alt,
 
-    areaQuadrado: (a, b) => a * b,
-    // Teste de constantes, fórmulas geométricas
+    areaQuadrado: (a) => a * a,
+
 }
 
 const constMAP = {
@@ -50,14 +54,6 @@ function atualizarLabel() {
     const forma = constMAP.select.value;
     const labelL = constMAP.labelLargura;
     const labelA = constMAP.labelAltura;
-    //const labelX = constMAP.labelRX;
-    //const labelY = constMAP.labelRY;
-    //const supTrapezio = constMAP.labelsup;
-    //const infTrapezio = constMAP.labelinf;
-    //const altTrapezio = constMAP.labelalt;
-    //const anguloA = constMAP.angulo1;
-    //const anguloB = constMAP.angulo2;
-    //const anguloC = constMAP.angulo3;
 
     if (forma) {
         labelL.textContent = `Largura do ${forma}: `;
@@ -69,44 +65,45 @@ function atualizarLabel() {
     }
 }
 
-//function areaRetangulo() {
-//}
-
-//function areaCirculo() {
-//}
-
-//function areaTriangulo() {
-//}
-
-//function areaTrapezio() {
-//}
-
-//function areaQuadrado() {
-
-//}
-
 function mostrarResultados() {
-    const select = constMAP.select.value
-    const forma = select.value;
-  
-    //let area = constMAP.largura.value / 1000 * constMAP.altura.value / 1000;
-    //let perimetro = (constMAP.largura.value / 1000 + constMAP.altura.value / 1000) * 2;
 
-    switch (forma){
-        case "Triangulo":
-            return f_MAP.areaTriangulo.value;
-        case "Quadrado":
-            return f_MAP.areaQuadrado.value;
-        case "Circulo":
-            return f_MAP.areaCirculo.value;
-        case "Trapezio":
-            return f_MAP.areaTrapezio.value;
-        case "Retangulo":
-            return f_MAP.areaRetangulo.value;
-    }
+    const forma = constMAP.select.value;
     const resultado = constMAP.resultado;
-    resultado.innerHTML = `
-    <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
-    <p>Perímetro do ${forma}: ${perimetro.toFixed(2)} m. </p>
-    `
+
+    // let area = constMAP.largura.value / 1000 * constMAP.altura.value / 1000;
+    // let perimetro = (constMAP.largura.value / 1000 + constMAP.altura.value / 1000) * 2;
+
+    switch (forma) {
+        case "Triangulo":
+            resultado.innerHTML =
+                "Triângulo Vazio"
+            break;
+        case "Quadrado":
+            resultado.innerHTML =`
+            <p>Área do ${forma}: ${f_MAP.areaQuadrado(constMAP.largura.value)} m².
+            `
+            break;
+        case "Circulo":
+            resultado.innerHTML =
+                "Círculo Vazio"
+            break;
+        case "Trapezio":
+            resultado.innerHTML =
+                ""
+            break
+        case "Retangulo":
+            resultado.innerHTML =`
+            <p>Área do ${forma}: ${f_MAP.areaRetangulo(constMAP.largura.value, constMAP.altura.value)} m².
+            `
+                // "Área = " + f_MAP.areaRetangulo(constMAP.largura.value, constMAP.altura.value) + "m²";
+            break;
+        default: 
+            resultado.innerHTML = " <p> Não há nenhum valor inserido!";
+            break;
+    }
+
+    // resultado.innerHTML = `
+    // <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
+    // <p>Perímetro do ${forma}: ${perimetro.toFixed(2)} m. </p>
+    // `
 }
