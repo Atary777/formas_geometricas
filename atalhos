@@ -24,3 +24,7 @@
 
 //}
 
+// resultado.innerHTML = `
+    // <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
+    // <p>Perímetro do ${forma}: ${perimetro.toFixed(2)} m. </p>
+    // 

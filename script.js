@@ -50,7 +50,7 @@ const constMAP = {
     resultado: document.getElementById("resultado"),
 };
 
-function atualizarLabel() {
+/*function atualizarLabel() {
     const forma = constMAP.select.value;
     const labelL = constMAP.labelLargura;
     const labelA = constMAP.labelAltura;
@@ -63,47 +63,45 @@ function atualizarLabel() {
         labelL.textContent = 'Largura: ';
         labelA.textContent = 'Altura: ';
     }
-}
+}*/
 
 function mostrarResultados() {
 
     const forma = constMAP.select.value;
     const resultado = constMAP.resultado;
 
-    // let area = constMAP.largura.value / 1000 * constMAP.altura.value / 1000;
-    // let perimetro = (constMAP.largura.value / 1000 + constMAP.altura.value / 1000) * 2;
-
     switch (forma) {
         case "Triangulo":
-            resultado.innerHTML =
-                "Triângulo Vazio"
+            resultado.innerHTML = `
+            <p>Área do ${forma}: ${f_MAP.areaRetangulo(constMAP.angulo1.value, constMAP.angulo2.value, constMAP.angulo3.value)} m².
+            `
             break;
         case "Quadrado":
-            resultado.innerHTML =`
+            resultado.innerHTML = `
             <p>Área do ${forma}: ${f_MAP.areaQuadrado(constMAP.largura.value)} m².
             `
             break;
         case "Circulo":
-            resultado.innerHTML =
-                "Círculo Vazio"
+            resultado.innerHTML = `
+            <p>Área do ${forma}: ${f_MAP.areaCirculo(constMAP.raioX.value, constMAP.raioY.value)} m².
+            <p>Perímetro do ${forma}: ${f_MAP.areaCirculo(constMAP.raioX.value, constMAP.raioY.value)}
+            `
             break;
         case "Trapezio":
-            resultado.innerHTML =
-                ""
-            break
+            resultado.innerHTML = `
+            <p>Área do ${forma}: ${f_MAP.areaTrapezio(constMAP.baseInferior.value, constMAP.baseSuperior.value, constMAP.alturaTrapezio.value)} m².
+            `
+            break;
         case "Retangulo":
             resultado.innerHTML =`
             <p>Área do ${forma}: ${f_MAP.areaRetangulo(constMAP.largura.value, constMAP.altura.value)} m².
+            <p>Perímetro do ${forma}: ${f_MAP.areaRetangulo(constMAP.largura.value, constMAP.altura.value)} m².
             `
-                // "Área = " + f_MAP.areaRetangulo(constMAP.largura.value, constMAP.altura.value) + "m²";
             break;
         default: 
             resultado.innerHTML = " <p> Não há nenhum valor inserido!";
             break;
     }
 
-    // resultado.innerHTML = `
-    // <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
-    // <p>Perímetro do ${forma}: ${perimetro.toFixed(2)} m. </p>
-    // `
+    
 }
