@@ -1,5 +1,4 @@
 const f_MAP = {
-    // Características do Retângulo
     areaRetangulo: (l, a) => l / 1000 * a / 1000,
     perimetroRetangulo: (l, a) => 2 * (l + a),
     hipotenusaRetangulo: (a, b) => Math.sqrt(a ** 2 + b ** 2),
@@ -50,20 +49,34 @@ const constMAP = {
     resultado: document.getElementById("resultado"),
 };
 
-/*function atualizarLabel() {
+function atualizarLabel() {
+
     const forma = constMAP.select.value;
-    const labelL = constMAP.labelLargura;
-    const labelA = constMAP.labelAltura;
 
-    if (forma) {
-        labelL.textContent = `Largura do ${forma}: `;
-        labelA.textContent = `Altura do ${forma}: `;
+    switch (forma) {
+        case "Triangulo":
+            constMAP.angulo1.style.display = "none";
+            constMAP.angulo2.style.display = "none";
+            constMAP.angulo3.style.display = "none";
+            break;
+        default:
+            document.getElementById(id).style.display = "block";
+            break;
 
-    } else {
-        labelL.textContent = 'Largura: ';
-        labelA.textContent = 'Altura: ';
     }
-}*/
+
+    constMAP.labelLargura.style.display = "none";
+    constMAP.labelAltura.style.display = "none";
+    constMAP.labelRX.style.display = "none";
+    constMAP.labelRY.style.display = "none";
+    constMAP.labelinf.style.display = "none";
+    constMAP.labelsup.style.display = "none";
+    constMAP.labelalt.style.display = "none";
+    constMAP.labelang1.style.display = "none";
+    constMAP.labelang2.style.display = "none";
+    constMAP.labelang3.style.display = "none";
+
+}
 
 function mostrarResultados() {
 
@@ -93,15 +106,15 @@ function mostrarResultados() {
             `
             break;
         case "Retangulo":
-            resultado.innerHTML =`
+            resultado.innerHTML = `
             <p>Área do ${forma}: ${f_MAP.areaRetangulo(constMAP.largura.value, constMAP.altura.value)} m².
             <p>Perímetro do ${forma}: ${f_MAP.areaRetangulo(constMAP.largura.value, constMAP.altura.value)} m².
             `
             break;
-        default: 
+        default:
             resultado.innerHTML = " <p> Não há nenhum valor inserido!";
             break;
     }
 
-    
+
 }

@@ -28,3 +28,26 @@
     // <p>Área do ${forma}: ${area.toFixed(2)} m². </p>
     // <p>Perímetro do ${forma}: ${perimetro.toFixed(2)} m. </p>
     // 
+
+
+
+
+
+
+
+
+    /*function atualizarLabel() {
+    const forma = constMAP.select.value;
+
+    if (forma == "Triangulo") {
+        constMAP.labelang1.textContent,
+        constMAP.labelang2.textContent,
+        constMAP.labelang3.textContent;
+    } else if (forma == "Quadrado") {
+        constMAP.largura.textContent;
+    } else if (forma == "Circulo") {
+        constMAP.labelRX.textContent,
+        constMAP.labelRY.textContent;
+    }else {
+        console.log("Selecione a forma...");
+    }
