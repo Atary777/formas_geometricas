@@ -18,7 +18,7 @@ const f_MAP = {
 
     areaTrapezio: (base1, base2, alt) => 1 / 2(base1 + base2) * alt,
 
-    areaQuadrado: (a) => a * a,
+    areaQuadrado: (a) => a * a / 1000,
 
 }
 
@@ -49,33 +49,127 @@ const constMAP = {
     resultado: document.getElementById("resultado"),
 };
 
+
 function atualizarLabel() {
 
     const forma = constMAP.select.value;
 
     switch (forma) {
         case "Triangulo":
+            constMAP.altura.style.display = "none";
+            constMAP.largura.style.display = "none";
+            constMAP.raioX.style.display = "none"
+            constMAP.raioY.style.display = "none" 
+            //constMAP.angulo1.style.display = "none";
+            //constMAP.angulo2.style.display = "none";
+            //constMAP.angulo3.style.display = "none";           
+            constMAP.baseInferior.style.display = "none";
+            constMAP.baseSuperior.style.display = "none";
+            constMAP.alturaTrapezio.style.display = "none";
+            constMAP.labelRX.style.display = "none";
+            constMAP.labelRY.style.display = "none";
+            constMAP.labelinf.style.display = "none";
+            constMAP.labelsup.style.display = "none";
+            constMAP.labelalt.style.display = "none";
+            //constMAP.labelang1.style.display = "none";
+            //constMAP.labelang2.style.display = "none";
+            //constMAP.labelang3.style.display = "none";
+            constMAP.labelLargura.style.display = "none";
+            constMAP.labelAltura.style.display = "none";
+        break;
+        case "Quadrado":
+            //constMAP.altura.style.display = "none";
+            //constMAP.largura.style.display = "none";
+            constMAP.raioX.style.display = "none";
+            constMAP.raioY.style.display = "none";
             constMAP.angulo1.style.display = "none";
             constMAP.angulo2.style.display = "none";
-            constMAP.angulo3.style.display = "none";
-            break;
+            constMAP.angulo3.style.display = "none";           
+            constMAP.baseInferior.style.display = "none";
+            constMAP.baseSuperior.style.display = "none";
+            constMAP.alturaTrapezio.style.display = "none";
+            constMAP.labelRX.style.display = "none";
+            constMAP.labelRY.style.display = "none";
+            constMAP.labelinf.style.display = "none";
+            constMAP.labelsup.style.display = "none";
+            constMAP.labelalt.style.display = "none";
+            constMAP.labelang1.style.display = "none";
+            constMAP.labelang2.style.display = "none";
+            constMAP.labelang3.style.display = "none";
+            //constMAP.labelLargura.style.display = "none";
+            //constMAP.labelAltura.style.display = "none";
+        break;
+        case "Circulo":
+            constMAP.altura.style.display = "none";
+            constMAP.largura.style.display = "none";
+            //constMAP.raioX.style.display = "none"
+            //constMAP.raioY.style.display = "none" 
+            constMAP.angulo1.style.display = "none";
+            constMAP.angulo2.style.display = "none";
+            constMAP.angulo3.style.display = "none";           
+            constMAP.baseInferior.style.display = "none";
+            constMAP.baseSuperior.style.display = "none";
+            constMAP.alturaTrapezio.style.display = "none";
+            //constMAP.labelRX.style.display = "none";
+            //constMAP.labelRY.style.display = "none";
+            constMAP.labelinf.style.display = "none";
+            constMAP.labelsup.style.display = "none";
+            constMAP.labelalt.style.display = "none";
+            constMAP.labelang1.style.display = "none";
+            constMAP.labelang2.style.display = "none";
+            constMAP.labelang3.style.display = "none";
+            constMAP.labelLargura.style.display = "none";
+            constMAP.labelAltura.style.display = "none";
+        break;
+        case "Retangulo":
+            //constMAP.altura.style.display = "none";
+            //constMAP.largura.style.display = "none";
+            constMAP.raioX.style.display = "none"
+            constMAP.raioY.style.display = "none" 
+            constMAP.angulo1.style.display = "none";
+            constMAP.angulo2.style.display = "none";
+            constMAP.angulo3.style.display = "none";           
+            constMAP.baseInferior.style.display = "none";
+            constMAP.baseSuperior.style.display = "none";
+            constMAP.alturaTrapezio.style.display = "none";
+            constMAP.labelRX.style.display = "none";
+            constMAP.labelRY.style.display = "none";
+            constMAP.labelinf.style.display = "none";
+            constMAP.labelsup.style.display = "none";
+            constMAP.labelalt.style.display = "none";
+            constMAP.labelang1.style.display = "none";
+            constMAP.labelang2.style.display = "none";
+            constMAP.labelang3.style.display = "none";
+            //constMAP.labelLargura.style.display = "none";
+            //constMAP.labelAltura.style.display = "none";
+        break;
+        case "Trapezio":
+            constMAP.altura.style.display = "none";
+            constMAP.largura.style.display = "none";
+            constMAP.raioX.style.display = "none"
+            constMAP.raioY.style.display = "none" 
+            constMAP.angulo1.style.display = "none";
+            constMAP.angulo2.style.display = "none";
+            constMAP.angulo3.style.display = "none";           
+            //constMAP.baseInferior.style.display = "none";
+            //constMAP.baseSuperior.style.display = "none";
+            //constMAP.alturaTrapezio.style.display = "none";
+            constMAP.labelRX.style.display = "none";
+            constMAP.labelRY.style.display = "none";
+            constMAP.labelinf.style.display = "none";
+            //constMAP.labelsup.style.display = "none";
+            //constMAP.labelalt.style.display = "none";
+            constMAP.labelang1.style.display = "none";
+            constMAP.labelang2.style.display = "none";
+            constMAP.labelang3.style.display = "none";
+            constMAP.labelLargura.style.display = "none";
+            constMAP.labelAltura.style.display = "none";
+        break;
         default:
             document.getElementById(id).style.display = "block";
             break;
 
     }
-
-    constMAP.labelLargura.style.display = "none";
-    constMAP.labelAltura.style.display = "none";
-    constMAP.labelRX.style.display = "none";
-    constMAP.labelRY.style.display = "none";
-    constMAP.labelinf.style.display = "none";
-    constMAP.labelsup.style.display = "none";
-    constMAP.labelalt.style.display = "none";
-    constMAP.labelang1.style.display = "none";
-    constMAP.labelang2.style.display = "none";
-    constMAP.labelang3.style.display = "none";
-
 }
 
 function mostrarResultados() {
