@@ -15,9 +15,7 @@ const f_MAP = {
     cantosElipse: 0,
 
     areaTriangulo: (a, b, c) => a + b + c,
-
     areaTrapezio: (base1, base2, alt) => 1 / 2(base1 + base2) * alt,
-
     areaQuadrado: (a) => a * a / 1000,
 
 }
@@ -47,128 +45,27 @@ const constMAP = {
     labelang2: document.getElementById("labelang2"),
     labelang3: document.getElementById("labelang3"),
     resultado: document.getElementById("resultado"),
-};
 
+    arr: ['altura', 'largura', 'raioX', 'raioY', 'angulo1', 'angulo2', 'angulo3', 'baseInferior', 'baseSuperior', 'alturaTrapezio']
+};
 
 function atualizarLabel() {
 
-    const forma = constMAP.select.value;
-
-    switch (forma) {
-        case "Triangulo":
-            constMAP.altura.style.display = "none";
-            constMAP.largura.style.display = "none";
-            constMAP.raioX.style.display = "none"
-            constMAP.raioY.style.display = "none" 
-            //constMAP.angulo1.style.display = "none";
-            //constMAP.angulo2.style.display = "none";
-            //constMAP.angulo3.style.display = "none";           
-            constMAP.baseInferior.style.display = "none";
-            constMAP.baseSuperior.style.display = "none";
-            constMAP.alturaTrapezio.style.display = "none";
-            constMAP.labelRX.style.display = "none";
-            constMAP.labelRY.style.display = "none";
-            constMAP.labelinf.style.display = "none";
-            constMAP.labelsup.style.display = "none";
-            constMAP.labelalt.style.display = "none";
-            //constMAP.labelang1.style.display = "none";
-            //constMAP.labelang2.style.display = "none";
-            //constMAP.labelang3.style.display = "none";
-            constMAP.labelLargura.style.display = "none";
-            constMAP.labelAltura.style.display = "none";
-        break;
-        case "Quadrado":
-            //constMAP.altura.style.display = "none";
-            //constMAP.largura.style.display = "none";
-            constMAP.raioX.style.display = "none";
-            constMAP.raioY.style.display = "none";
-            constMAP.angulo1.style.display = "none";
-            constMAP.angulo2.style.display = "none";
-            constMAP.angulo3.style.display = "none";           
-            constMAP.baseInferior.style.display = "none";
-            constMAP.baseSuperior.style.display = "none";
-            constMAP.alturaTrapezio.style.display = "none";
-            constMAP.labelRX.style.display = "none";
-            constMAP.labelRY.style.display = "none";
-            constMAP.labelinf.style.display = "none";
-            constMAP.labelsup.style.display = "none";
-            constMAP.labelalt.style.display = "none";
-            constMAP.labelang1.style.display = "none";
-            constMAP.labelang2.style.display = "none";
-            constMAP.labelang3.style.display = "none";
-            //constMAP.labelLargura.style.display = "none";
-            //constMAP.labelAltura.style.display = "none";
-        break;
-        case "Circulo":
-            constMAP.altura.style.display = "none";
-            constMAP.largura.style.display = "none";
-            //constMAP.raioX.style.display = "none"
-            //constMAP.raioY.style.display = "none" 
-            constMAP.angulo1.style.display = "none";
-            constMAP.angulo2.style.display = "none";
-            constMAP.angulo3.style.display = "none";           
-            constMAP.baseInferior.style.display = "none";
-            constMAP.baseSuperior.style.display = "none";
-            constMAP.alturaTrapezio.style.display = "none";
-            //constMAP.labelRX.style.display = "none";
-            //constMAP.labelRY.style.display = "none";
-            constMAP.labelinf.style.display = "none";
-            constMAP.labelsup.style.display = "none";
-            constMAP.labelalt.style.display = "none";
-            constMAP.labelang1.style.display = "none";
-            constMAP.labelang2.style.display = "none";
-            constMAP.labelang3.style.display = "none";
-            constMAP.labelLargura.style.display = "none";
-            constMAP.labelAltura.style.display = "none";
-        break;
-        case "Retangulo":
-            //constMAP.altura.style.display = "none";
-            //constMAP.largura.style.display = "none";
-            constMAP.raioX.style.display = "none"
-            constMAP.raioY.style.display = "none" 
-            constMAP.angulo1.style.display = "none";
-            constMAP.angulo2.style.display = "none";
-            constMAP.angulo3.style.display = "none";           
-            constMAP.baseInferior.style.display = "none";
-            constMAP.baseSuperior.style.display = "none";
-            constMAP.alturaTrapezio.style.display = "none";
-            constMAP.labelRX.style.display = "none";
-            constMAP.labelRY.style.display = "none";
-            constMAP.labelinf.style.display = "none";
-            constMAP.labelsup.style.display = "none";
-            constMAP.labelalt.style.display = "none";
-            constMAP.labelang1.style.display = "none";
-            constMAP.labelang2.style.display = "none";
-            constMAP.labelang3.style.display = "none";
-            //constMAP.labelLargura.style.display = "none";
-            //constMAP.labelAltura.style.display = "none";
-        break;
-        case "Trapezio":
-            constMAP.altura.style.display = "none";
-            constMAP.largura.style.display = "none";
-            constMAP.raioX.style.display = "none"
-            constMAP.raioY.style.display = "none" 
-            constMAP.angulo1.style.display = "none";
-            constMAP.angulo2.style.display = "none";
-            constMAP.angulo3.style.display = "none";           
-            //constMAP.baseInferior.style.display = "none";
-            //constMAP.baseSuperior.style.display = "none";
-            //constMAP.alturaTrapezio.style.display = "none";
-            constMAP.labelRX.style.display = "none";
-            constMAP.labelRY.style.display = "none";
-            constMAP.labelinf.style.display = "none";
-            //constMAP.labelsup.style.display = "none";
-            //constMAP.labelalt.style.display = "none";
-            constMAP.labelang1.style.display = "none";
-            constMAP.labelang2.style.display = "none";
-            constMAP.labelang3.style.display = "none";
-            constMAP.labelLargura.style.display = "none";
-            constMAP.labelAltura.style.display = "none";
-        break;
-        default:
-            document.getElementById(id).style.display = "block";
-            break;
-
+    const forma = constMAP.select.value; 
+    const variavel = constMAP.arr.value;
+    if(forma === "Triangulo") {
+            variavel.innerHTML = seletor(arr['angulo1', 'angulo2', 'angulo3']);
+        } else if(forma === "Quadrado") {
+            variavel.innerHTML = seletor(arr['angulo1', 'angulo2', 'angulo3']);
+        } else if (forma === "Circulo") {
+            variavel.innerHTML = seletor(arr['raioX', 'raioY']);
+        } else if (forma === "Trapezio") {
+            variavel.innerHTML = seletor(arr['baseInferior', 'baseSuperior', 'alturaTrapezio']);
+        } else if (forma === "Retangulo") {
+            variavel.innerHTML = seletor(arr['angulo1', 'angulo2', 'angulo3']);
+        }
+        else {
+            resultado.innerHTML = " <p> Não há nenhum valor inserido!";
     }
 }
 
@@ -177,38 +74,30 @@ function mostrarResultados() {
     const forma = constMAP.select.value;
     const resultado = constMAP.resultado;
 
-    switch (forma) {
-        case "Triangulo":
+        if(forma === "Triangulo") {
             resultado.innerHTML = `
             <p>Área do ${forma}: ${f_MAP.areaRetangulo(constMAP.angulo1.value, constMAP.angulo2.value, constMAP.angulo3.value)} m².
             `
-            break;
-        case "Quadrado":
+        } else if(forma === "Quadrado") {
             resultado.innerHTML = `
             <p>Área do ${forma}: ${f_MAP.areaQuadrado(constMAP.largura.value)} m².
             `
-            break;
-        case "Circulo":
+        } else if (forma === "Circulo") {
             resultado.innerHTML = `
             <p>Área do ${forma}: ${f_MAP.areaCirculo(constMAP.raioX.value, constMAP.raioY.value)} m².
             <p>Perímetro do ${forma}: ${f_MAP.areaCirculo(constMAP.raioX.value, constMAP.raioY.value)}
             `
-            break;
-        case "Trapezio":
+        } else if (forma === "Trapezio") {
             resultado.innerHTML = `
             <p>Área do ${forma}: ${f_MAP.areaTrapezio(constMAP.baseInferior.value, constMAP.baseSuperior.value, constMAP.alturaTrapezio.value)} m².
             `
-            break;
-        case "Retangulo":
+        } else if (forma === "Retangulo") {
             resultado.innerHTML = `
             <p>Área do ${forma}: ${f_MAP.areaRetangulo(constMAP.largura.value, constMAP.altura.value)} m².
             <p>Perímetro do ${forma}: ${f_MAP.areaRetangulo(constMAP.largura.value, constMAP.altura.value)} m².
             `
-            break;
-        default:
+        }
+        else {
             resultado.innerHTML = " <p> Não há nenhum valor inserido!";
-            break;
     }
-
-
 }
