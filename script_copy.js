@@ -21,61 +21,30 @@ const f_MAP = {
 
 const constMAP = {
     select: document.getElementById("forms"),
-    // tipoTriangulo: document.getElementById("triangulos"),
-    resultado: document.getElementById("resultado")
-}
-
-const square = {
+    tipoTriangulo: document.getElementById("triangulos"),
     largura: document.getElementById("largura"),
     altura: document.getElementById("altura"),
-    labelLargura: document.getElementById("labelLargura"),
-    labelAltura: document.getElementById("labelAltura")
-}
-
-const triangle = {
+    raioX: document.getElementById("raioX"),
+    raioY: document.getElementById("raioY"),
     angulo1: document.getElementById("angulo_1"),
     angulo2: document.getElementById("angulo_2"),
     angulo3: document.getElementById("angulo_3"),
-    labelang1: document.getElementById("labelang1"),
-    labelang2: document.getElementById("labelang2"),
-    labelang3: document.getElementById("labelang3")
-}
-
-const circle = {
-    raioX: document.getElementById("raioX"),
-    raioY: document.getElementById("raioY"),
-    labelRX: document.getElementById("labelRX"),
-    labelRY: document.getElementById("labelRY"),
-}
-
-const trapeze = {
     baseInferior: document.getElementById("baseinf"),
     baseSuperior: document.getElementById("basesup"),
     alturaTrapezio: document.getElementById("alt"),
-    labelInf: document.getElementById("labelInf"),
-    labelSup: document.getElementById("labelSup"),
-    labelAlt: document.getElementById("labelAlt")
-}
 
-function hideElements(){
-
-    Object.values(square).flat().forEach(element => {
-        element.style.display = "none";
-    });
-
-    Object.values(trapeze).flat().forEach(element => {
-        element.style.display = "none";
-    });
-
-    Object.values(circle).flat().forEach(element => {
-        element.style.display = "none";
-    });
-
-    Object.values(triangle).flat().forEach(element => {
-        element.style.display = "none";
-    });
-
-}
+    labelLargura: document.getElementById("labelLargura"),
+    labelAltura: document.getElementById("labelAltura"),
+    labelRX: document.getElementById("labelRX"),
+    labelRY: document.getElementById("labelRY"),
+    labelinf: document.getElementById("labelinf"),
+    labelsup: document.getElementById("labelsup"),
+    labelalt: document.getElementById("labelalt"),
+    labelang1: document.getElementById("labelang1"),
+    labelang2: document.getElementById("labelang2"),
+    labelang3: document.getElementById("labelang3"),
+    resultado: document.getElementById("resultado"),
+};
 
 const displayMAP = {
     Retangulo: [constMAP.largura, constMAP.altura, constMAP.labelLargura, constMAP.labelAltura],
@@ -86,7 +55,7 @@ const displayMAP = {
     Quadrado: [constMAP.largura, constMAP.labelLargura]
 };
 
-function hideAllInputs() {
+function hideAllInputs(){
 
     Object.values(displayMAP).flat().forEach(element => {
         element.style.display = "none";
@@ -97,14 +66,14 @@ function hideAllInputs() {
 function atualizarLabel() {
 
     resultado.innerHTML = "";
-    
+
     hideAllInputs();
 
     const forma = constMAP.select.value;
 
     if (!displayMAP[forma]) return;
 
-    displayMAP[forma].forEach(element => {
+    displayMAP[forma].forEach(element =>{
         element.style.display = "inline-block";
     });
 
