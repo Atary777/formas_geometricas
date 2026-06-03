@@ -15,67 +15,38 @@ const f_MAP = {
     cantosElipse: 0,
 
     areaTriangulo: (a, b, c) => a + b + c,
+
     areaTrapezio: (base1, base2, alt) => 1 / 2 * (base1 + base2) * alt,
+
     areaQuadrado: (a) => a / 1000 * a / 1000,
 }
 
 const constMAP = {
     select: document.getElementById("forms"),
-    // tipoTriangulo: document.getElementById("triangulos"),
-    resultado: document.getElementById("resultado")
-}
-
-const square = {
+    tipoTriangulo: document.getElementById("triangulos"),
     largura: document.getElementById("largura"),
     altura: document.getElementById("altura"),
-    labelLargura: document.getElementById("labelLargura"),
-    labelAltura: document.getElementById("labelAltura")
-}
-
-const triangle = {
+    raioX: document.getElementById("raioX"),
+    raioY: document.getElementById("raioY"),
     angulo1: document.getElementById("angulo_1"),
     angulo2: document.getElementById("angulo_2"),
     angulo3: document.getElementById("angulo_3"),
-    labelang1: document.getElementById("labelang1"),
-    labelang2: document.getElementById("labelang2"),
-    labelang3: document.getElementById("labelang3")
-}
-
-const circle = {
-    raioX: document.getElementById("raioX"),
-    raioY: document.getElementById("raioY"),
-    labelRX: document.getElementById("labelRX"),
-    labelRY: document.getElementById("labelRY"),
-}
-
-const trapeze = {
     baseInferior: document.getElementById("baseinf"),
     baseSuperior: document.getElementById("basesup"),
     alturaTrapezio: document.getElementById("alt"),
-    labelInf: document.getElementById("labelInf"),
-    labelSup: document.getElementById("labelSup"),
-    labelAlt: document.getElementById("labelAlt")
-}
 
-function hideElements(){
-
-    Object.values(square).flat().forEach(element => {
-        element.style.display = "none";
-    });
-
-    Object.values(trapeze).flat().forEach(element => {
-        element.style.display = "none";
-    });
-
-    Object.values(circle).flat().forEach(element => {
-        element.style.display = "none";
-    });
-
-    Object.values(triangle).flat().forEach(element => {
-        element.style.display = "none";
-    });
-
-}
+    labelLargura: document.getElementById("labelLargura"),
+    labelAltura: document.getElementById("labelAltura"),
+    labelRX: document.getElementById("labelRX"),
+    labelRY: document.getElementById("labelRY"),
+    labelinf: document.getElementById("labelinf"),
+    labelsup: document.getElementById("labelsup"),
+    labelalt: document.getElementById("labelalt"),
+    labelang1: document.getElementById("labelang1"),
+    labelang2: document.getElementById("labelang2"),
+    labelang3: document.getElementById("labelang3"),
+    resultado: document.getElementById("resultado"),
+};
 
 const displayMAP = {
     Retangulo: [constMAP.largura, constMAP.altura, constMAP.labelLargura, constMAP.labelAltura],
@@ -96,7 +67,7 @@ function hideAllInputs() {
 
 function atualizarLabel() {
 
-    resultado.innerHTML = "";
+    constMAP.resultado.innerHTML = "";
     
     hideAllInputs();
 
@@ -115,39 +86,41 @@ function mostrarResultados() {
     const forma = constMAP.select.value;
     const resultado = constMAP.resultado;
 
-    if (forma === "Triangulo") {
-        resultado.innerHTML = `
-            <p>Área do ${forma}: ${f_MAP.areaRetangulo(triangle.angulo1.value, triangle.angulo2.value, triangle.angulo3.value)} m².
+    switch (forma) {
+        case "Triangulo":
+            resultado.innerHTML = `
+            <p>Área do ${forma}: ${f_MAP.areaTriangulo(constMAP.angulo1.value, constMAP.angulo2.value, constMAP.angulo3.value)} m².
             `
-    } else if (forma === "Quadrado") {
-        resultado.innerHTML = `
-            <p>Área do ${forma}: ${f_MAP.areaQuadrado(square.largura.value)} m².
+            break;
+        case "Quadrado":
+            resultado.innerHTML = `
+            <p>Área do ${forma}: ${f_MAP.areaQuadrado(constMAP.largura.value)} m².
             `
-    } else if (forma === "Circulo") {
-        resultado.innerHTML = `
-            <p>Área do ${forma}: ${f_MAP.areaCirculo(circle.raioX.value, circle.raioY.value)} m².
-            <p>Perímetro do ${forma}: ${f_MAP.areaCirculo(circle.raioX.value, circle.raioY.value)}
+            break;
+        case "Circulo":
+            resultado.innerHTML = `
+            <p>Área do ${forma}: ${f_MAP.areaCirculo(constMAP.raioX.value)} m².
+            <p>Perímetro do ${forma}: ${f_MAP.perimetroCirculoCirculo(constMAP.raioX.value)}
             `
-    } else if (forma === "Trapezio") {
-        resultado.innerHTML = `
-            <p>Área do ${forma}: ${f_MAP.areaTrapezio(trapeze.baseInferior.value, trapeze.baseSuperior.value, trapeze.alturaTrapezio.value)} m².
+            break;
+        case "Trapezio":
+            resultado.innerHTML = `
+            <p>Área do ${forma}: ${f_MAP.areaTrapezio(constMAP.baseInferior.value, constMAP.baseSuperior.value, constMAP.alturaTrapezio.value)} m².
             `
-    } else if (forma === "Retangulo") {
-        resultado.innerHTML = `
-            <p>Área do ${forma}: ${f_MAP.areaRetangulo(square.largura.value, square.altura.value)} m².
-            <p>Perímetro do ${forma}: ${f_MAP.perimetroRetangulo(square.largura.value, square.altura.value)} m.
+            break;
+        case "Retangulo":
+            resultado.innerHTML = `
+            <p>Área do ${forma}: ${f_MAP.areaRetangulo(constMAP.largura.value, constMAP.altura.value)} m².
+            <p>Perímetro do ${forma}: ${f_MAP.perimetroRetangulo(constMAP.largura.value, constMAP.altura.value)} m.
             <p>Cantos do ${forma}: ${f_MAP.cantosRetangulo}.
             <p>Lados do ${forma}: ${f_MAP.ladosRetangulo}.
             <p>Soma angular do ${forma}: ${f_MAP.somaAngulosRetangulo}.
             `
+            break;
+        default:
+            resultado.innerHTML = " <p> Não há nenhum valor inserido!";
+            break;
     }
-    else {
-        resultado.innerHTML = " <p> Não há nenhum valor inserido!";
-    }
+
+
 }
-
-// () Parenteses
-
-// [] Colchete
-
-// {} Chave
