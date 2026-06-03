@@ -6,17 +6,17 @@ const f_MAP = {
     ladosRetangulo: 4,
     somaAngulosRetangulo: 360,
 
-    areaCirculo: (raioX) => (raioX ** 2) * Math.PI,
-    perimetroCirculo: (raioX) => 2 * Math.PI * raioX,
+    areaCirculo: (a) => (a ** 2) * Math.PI,
+    perimetroCirculo: (a) => 2 * Math.PI * a,
     cantosCirculo: 0,
 
-    areaElipse: (raioX, raioY) => (raioX * raioY) * Math.PI,
-    perimetroElipse: (raioX, raioY) => 2 * Math.PI * (raioX * raioY),
+    areaElipse: (a, b) => (a * b) * Math.PI,
+    perimetroElipse: (a, b) => 2 * Math.PI * (a * b),
     cantosElipse: 0,
 
     areaTriangulo: (a, b, c) => a + b + c,
 
-    areaTrapezio: (base1, base2, alt) => 1 / 2 * (base1 + base2) * alt,
+    areaTrapezio: (b1, b2, alt) => 1 / 2 * (b1 + b2) * alt,
 
     areaQuadrado: (a) => a / 1000 * a / 1000,
 }
@@ -100,7 +100,7 @@ function mostrarResultados() {
         case "Circulo":
             resultado.innerHTML = `
             <p>Área do ${forma}: ${f_MAP.areaCirculo(constMAP.raioX.value)} m².
-            <p>Perímetro do ${forma}: ${f_MAP.perimetroCirculoCirculo(constMAP.raioX.value)}
+            <p>Perímetro do ${forma}: ${f_MAP.perimetroCirculo(constMAP.raioX.value)}
             `
             break;
         case "Trapezio":
