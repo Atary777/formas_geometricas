@@ -49,32 +49,36 @@ const constMAP = {
     resultado: document.getElementById("resultado"),
 };
 
+const displayMAP = {
+    Retangulo: [constMAP.largura, constMAP.altura, constMAP.labelLargura, constMAP.labelAltura],
+    Circulo: [constMAP.raioX, constMAP.labelRX],
+    Elipse: [constMAP.raioX, constMAP.raioY, constMAP.labelRX, constMAP.labelRY],
+    Triangulo: [constMAP.tipoTriangulo, constMAP.angulo1, constMAP.angulo2, constMAP.angulo3, constMAP.labelang1, constMAP.labelang2, constMAP.labelang3],
+    Trapezio: [constMAP.baseInferior, constMAP.baseSuperior, constMAP.alturaTrapezio, constMAP.labelinf, constMAP.labelsup, constMAP.labelalt],
+    Quadrado: [constMAP.largura, constMAP.labelLargura]
+};
+
+function hideAllInputs() {
+
+    Object.values(displayMAP).flat().forEach(element => {
+        element.style.display = "none";
+    });
+
+}
+
 function atualizarLabel() {
+
+    resultado.innerHTML = "";
+    
+    hideAllInputs();
 
     const forma = constMAP.select.value;
 
-    switch (forma) {
-        case "Triangulo":
-            constMAP.angulo1.style.display = "none";
-            constMAP.angulo2.style.display = "none";
-            constMAP.angulo3.style.display = "none";
-            break;
-        default:
-            document.getElementById(id).style.display = "block";
-            break;
+    if (!displayMAP[forma]) return;
 
-    }
-
-    constMAP.labelLargura.style.display = "none";
-    constMAP.labelAltura.style.display = "none";
-    constMAP.labelRX.style.display = "none";
-    constMAP.labelRY.style.display = "none";
-    constMAP.labelinf.style.display = "none";
-    constMAP.labelsup.style.display = "none";
-    constMAP.labelalt.style.display = "none";
-    constMAP.labelang1.style.display = "none";
-    constMAP.labelang2.style.display = "none";
-    constMAP.labelang3.style.display = "none";
+    displayMAP[forma].forEach(element => {
+        element.style.display = "inline-block";
+    });
 
 }
 
