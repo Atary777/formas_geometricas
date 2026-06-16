@@ -1,50 +1,57 @@
 <!doctype html>
 <html lang="pt-br">
-<title>Formas geométricas</title>
+  <title>Formas geométricas</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" constant="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" constant="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-  <texto>Vamos calcular a área da figura:</texto>
+  <body>
+    <texto>VAMOS CALCULAR A ÁREA DA FIGURA!</texto>
 
-  <div class="select_group">
-    <select id="forms" class="form_input" required onchange="atualizarLabel()">
-      <option value="">Selecione a forma:</option>
-      <option value="Triangulo">Triângulo</option>
-      <option value="Quadrado">Quadrado</option>
-      <option value="Circulo">Círculo</option>
-      <option value="Trapezio">Trapézio</option>
-      <option value="Retangulo">Retângulo</option>
-    </select>
-  </div>
+    <div class="select_group">
+      <select id="forms" class="form_input" required onchange="atualizarLabel()">
+        <option value="">Selecione a forma:</option>
+        <option value="Triangulo">Triângulo</option>
+        <option value="Quadrado">Quadrado</option>
+        <option value="Circulo">Círculo</option>
+        <option value="Trapezio">Trapézio</option>
+        <option value="Retangulo">Retângulo</option>
+      </select>
+    </div>
 
-<div class="select_tri_group"> 
-    <select id="triangulos" class="triangulo_input" required>
-      <option value="">Tipo:</option>
-      <option value="Isosceles">Isósceles</option>
-      <option value="Equilatero">Equilátero</option>
-      <option value="Escaleno">Escaleno</option>
-    </select>
-  </div>
+    <div class="select_tri_group">
+      <select id="triangulos" class="triangulo_input" required>
+        <option value="">Tipo:</option>
+        <option value="Isosceles">Isósceles</option>
+        <option value="Equilatero">Equilátero</option>
+        <option value="Escaleno">Escaleno</option>
+      </select>
+    </div>
 
   <div class="input_group">
     <label for="largura" id="labelLargura">Largura: </label>
     <input type="number" id="largura" step="1" class="form_input" required />
-    <label for="altura" id="labelAltura">Altura: </label>
-    <input type="number" id="altura" step="1" class="form_input" required />
   </div>
 
   <div class="input_group">
+    <label for="altura" id="labelAltura">Altura: </label>
+    <input type="number" id="altura" step="1" class="form_input" required />
+  </div>
+  
+  <div class="input_group_triangulo">
     <label for="angulo_1" id="labelang1">Angulo1: </label>
     <input type="number" id="angulo_1" step="1" class="form_input" required />
+  </div>
 
+  <div class="input_group_triangulo">
     <label for="angulo_2" id="labelang2">Angulo2: </label>
     <input type="number" id="angulo_2" step="1" class="form_input" required />
+  </div>
 
+  <div class="input_group_triangulo">
     <label for="angulo_3" id="labelang3">Angulo3: </label>
     <input type="number" id="angulo_3" step="1" class="form_input" required />
   </div>
@@ -52,30 +59,36 @@
   <div class="input_group">
     <label for="raioX" id="labelRX">raioX: </label>
     <input type="number" id="raioX" step="1" class="form_input" required />
-
-    <label for="raioY" id="labelRY">raioY: </label>
-    <input type="number" id="raioY" step="1" class="form_input" required />
   </div>
 
-    <div class="input_group">
-    <label for="basesup" id="labelsup">base superior: </label>
-    <input type="number" id="basesup" step="1" class="form_input" required />
+  <div class="input_group">
+      <label for="raioY" id="labelRY">raioY: </label>
+      <input type="number" id="raioY" step="1" class="form_input" required />
+    </div>
 
-    <label for="baseinf" id="labelinf">base inferior: </label>
-    <input type="number" id="baseinf" step="1" class="form_input" required />
-
-    <label for="alt" id="labelalt">altura trapézio: </label>
-    <input type="number" id="alt" step="1" class="form_input" required />
+  <div class="input_group">
+      <label for="basesup" id="labelsup">base superior: </label>
+      <input type="number" id="basesup" step="1" class="form_input" required />
   </div>
-  
-  <button type="button" onclick="mostrarResultados()">Calcular resultados: </button>
 
-  <div>
+  <div class="input_group">
+      <label for="baseinf" id="labelinf">base inferior: </label>
+      <input type="number" id="baseinf" step="1" class="form_input" required />
+  </div>
+
+  <div class="input_group">
+      <label for="alt" id="labelalt">altura trapézio: </label>
+      <input type="number" id="alt" step="1" class="form_input" required />
+  </div>
+
+    <button type="button" onclick="mostrarResultados()">
+      Calcular resultados:
+    </button>
+  </body>
+
+  <body_01>
     <result id="resultado"></result>
-  </div>
+  </body_01>
 
   <script src="script.js"></script>
-  
-</body>
-
 </html>
