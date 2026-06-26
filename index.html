@@ -8,9 +8,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
-    <texto>VAMOS CALCULAR A ÁREA DA FIGURA!</texto>
+<body>
 
+  <div class="container">
+      <header>
+        <h1>VAMOS CALCULAR A ÁREA DA FIGURA!</h1>
+      </header>
+
+  <aside class="menu">
     <div class="select_group">
       <select id="forms" class="form_input" required onchange="atualizarLabel()">
         <option value="">Selecione a forma:</option>
@@ -30,65 +35,68 @@
         <option value="Escaleno">Escaleno</option>
       </select>
     </div>
+  </aside>
 
-  <div class="input_group">
-    <label for="largura" id="labelLargura">Largura: </label>
-    <input type="number" id="largura" step="1" class="form_input" required />
-  </div>
+  <main class="conteudo">
+    <div class="input_group">
+      <label for="largura" id="labelLargura">Largura: </label>
+      <input type="number" id="largura" step="1" class="form_input" required />
+    </div>
 
-  <div class="input_group">
-    <label for="altura" id="labelAltura">Altura: </label>
-    <input type="number" id="altura" step="1" class="form_input" required />
-  </div>
+    <div class="input_group">
+      <label for="altura" id="labelAltura">Altura: </label>
+      <input type="number" id="altura" step="1" class="form_input" required />
+    </div>
   
-  <div class="input_group_triangulo">
-    <label for="angulo_1" id="labelang1">Angulo1: </label>
-    <input type="number" id="angulo_1" step="1" class="form_input" required />
-  </div>
+    <div class="input_group_triangulo">
+      <label for="angulo_1" id="labelang1">Angulo 1: </label>
+      <input type="number" id="angulo_1" step="1" class="form_input" required />
+    </div>
 
-  <div class="input_group_triangulo">
-    <label for="angulo_2" id="labelang2">Angulo2: </label>
-    <input type="number" id="angulo_2" step="1" class="form_input" required />
-  </div>
+    <div class="input_group_triangulo">
+      <label for="angulo_2" id="labelang2">Angulo 2: </label>
+      <input type="number" id="angulo_2" step="1" class="form_input" required />
+    </div>
 
-  <div class="input_group_triangulo">
-    <label for="angulo_3" id="labelang3">Angulo3: </label>
-    <input type="number" id="angulo_3" step="1" class="form_input" required />
-  </div>
+    <div class="input_group_triangulo">
+      <label for="angulo_3" id="labelang3">Angulo 3: </label>
+      <input type="number" id="angulo_3" step="1" class="form_input" required />
+    </div>
 
-  <div class="input_group">
-    <label for="raioX" id="labelRX">raioX: </label>
-    <input type="number" id="raioX" step="1" class="form_input" required />
-  </div>
+    <div class="input_group">
+      <label for="raioX" id="labelRX">raio X: </label>
+      <input type="number" id="raioX" step="1" class="form_input" required />
+    </div>
 
-  <div class="input_group">
-      <label for="raioY" id="labelRY">raioY: </label>
+    <div class="input_group">
+      <label for="raioY" id="labelRY">raio Y: </label>
       <input type="number" id="raioY" step="1" class="form_input" required />
     </div>
 
-  <div class="input_group">
+    <div class="input_group">
       <label for="basesup" id="labelsup">base superior: </label>
       <input type="number" id="basesup" step="1" class="form_input" required />
-  </div>
+    </div>
 
-  <div class="input_group">
+    <div class="input_group">
       <label for="baseinf" id="labelinf">base inferior: </label>
       <input type="number" id="baseinf" step="1" class="form_input" required />
-  </div>
+    </div>
 
-  <div class="input_group">
+    <div class="input_group">
       <label for="alt" id="labelalt">altura trapézio: </label>
       <input type="number" id="alt" step="1" class="form_input" required />
-  </div>
+    </div>
 
     <button type="button" onclick="mostrarResultados()">
       Calcular resultados:
     </button>
+  </main>
+
+  <section class="preview">
+  <div id="resultado"></div>
+  </section>
+  </div>
   </body>
-
-  <body_01>
-    <result id="resultado"></result>
-  </body_01>
-
   <script src="script.js"></script>
 </html>
